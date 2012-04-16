@@ -1,0 +1,30 @@
+{
+  "author": "Pavel Lang <langpavel@phpskelet.org>",
+  "name": "mysqladmin",
+  "description": "MySQL Administration like phpmyadmin",
+  "version": "0.0.0",
+  "keywords": [
+    "mysql",
+    "sql",
+    "database",
+    "administration",
+    "myorm"
+  ],
+  "homepage": "https://github.com/langpavel/node-mysqladmin",
+  "repository": {
+    "url": "https://github.com/langpavel/node-mysqladmin.git"
+  },
+  "dependencies": {
+    "myorm": "*",
+    "express": "*",
+    "jade": "*",
+    "stylus": "*"
+  },
+  "devDependencies": {
+    "nodeunit": "*"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

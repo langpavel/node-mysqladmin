@@ -1,13 +1,35 @@
-
 /**
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes')
-  , http = require('http');
+var express = require('express');
+var routes = require('./routes');
+var http = require('http');
 
-var app = express();
+var config = null;
+try {
+  // this applies to config up to application using this module
+  config = require('../../config');
+} catch(err) {
+  try {
+    // this is for local config
+    config = require('./config');
+  } catch(err) {
+    try {
+      config = require('./config.sample.json');
+      console.warn('mysqladmin: using sample configuration');
+    } catch(err) {
+      console.error('this is wrong...');
+    }
+  }
+}
+if(config === null) {
+  console.error('mysqladmin: cannot load configuration');
+}
+
+
+
+var app = module.exports = exports = express();
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -29,6 +51,11 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 
-http.createServer(app).listen(3000);
 
-console.log("Express server listening on port 3000");
+
+if(require.main === module) {
+  console.info("mysqladmin: module called as main. Running server...");
+  http.createServer(app).listen(3303, "127.0.0.1", function(){
+    console.info("mysqladmin: listening on 127.0.0.1:3303");
+  });
+}

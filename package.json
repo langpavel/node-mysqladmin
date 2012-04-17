@@ -26,5 +26,9 @@
   "optionalDependencies": {},
   "engines": {
     "node": "*"
+  },
+  "scripts": {
+    "test": "nodeunit tests",
+    "prepublish": "npm prune && npm test && git push"
   }
 }

@@ -3,5 +3,14 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    block scripts
+
   body
-    block content
+    block page
+      block left-container
+        #left-side
+          block left
+
+      block content-container
+        #content
+          block content

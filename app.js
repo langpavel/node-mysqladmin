@@ -40,7 +40,7 @@ app.configure(function(){
   app.use(express.static(__dirname + '/public'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(express.cookieParser('your secret here'));
+  app.use(express.cookieParser(config.cookieSecret || 'o2yUGg0mKCAPsTr3NlzQj'));
   app.use(express.session());
   app.use(app.router);
 });

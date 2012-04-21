@@ -1,6 +1,3 @@
 {
-  "database": {
-    "user": "root",
-    "password": "root"
-  }
+  "cookieSecret": "o2yUGg0mKCAPsTr3NlzQj"
 }

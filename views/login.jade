@@ -1,0 +1,36 @@
+extends layout
+
+block title
+  title Reporting › Přihlásit
+
+block navbar-user
+
+block content
+  .row
+    .span5
+      form.beta.form-horizontal(action='/login', method='POST')
+        legend Přihlásit
+        +csrf
+        .error
+          if locals.loginError
+            p.text-error= loginError
+        div.control-group
+          label.control-label(for="loginEmail") Email
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-envelope
+              input#loginEmail(name='email', type="email", placeholder="email", value=body.email, required)
+        div.control-group
+          label.control-label(for="loginPassword") Heslo
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-key
+              input#loginPassword(name='pass', type="password", placeholder="heslo", required)
+        div.control-group
+          div.controls
+            label.checkbox
+              input(name='remember', type="checkbox")
+              | Zapamatovat
+            +submit('Přihlásit')
+
+  include form-registrace

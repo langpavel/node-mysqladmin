@@ -1,19 +1,40 @@
 {
-  "name": "express-site-template",
+  "author": "Pavel Lang <langpavel@phpskelet.org>",
+  "name": "mysqladmin",
+  "description": "MySQL Administration like phpmyadmin",
   "version": "0.1.0alpha0",
-  "main": "./app/index",
-  "scripts": {
-    "test": "make test"
+  "keywords": [
+    "mysql",
+    "sql",
+    "database",
+    "administration"
+  ],
+  "homepage": "https://github.com/langpavel/node-mysqladmin",
+  "repository": {
+    "url": "https://github.com/langpavel/node-mysqladmin.git"
   },
   "dependencies": {
-    "connect-redis": "~1.4.5",
-    "debug": "~0.7.2",
-    "express": "~3.2.6",
-    "jade": "~0.31.2",
-    "mongodb": "~1.3.10",
-    "mysql": "~2.0.0-alpha8",
-    "redis": "~0.8.3",
-    "stylus": "~0.32.1",
-    "fakeredis": "~0.1.1"
+    "better-inspect": "*",
+    "clone": "*",
+    "connect-redis": "*",
+    "connect-repl": "*",
+    "debug": "*",
+    "express": "*",
+    "fakeredis": "*",
+    "jade": "*",
+    "mongodb": "*",
+    "mysql": "*",
+    "redis": "*",
+    "stylus": "*"
+  },
+  "devDependencies": {
+    "nodeunit": "*"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "echo TODO"
   }
 }

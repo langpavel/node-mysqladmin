@@ -66,12 +66,21 @@ if (load_middleware('cookieParser')) {
   }
 }
 
+require('./mysql')(app, config.mysql);
+
+
 debug('enqueuing express router');
 app.use(app.router);
 
 load_middleware('stylus', require('stylus').middleware);
 load_middleware('static');
 load_middleware('errorHandler');
+
+
+app.use(require('connect-repl')({
+  app: app
+}));
+
 
 debug('app boot done, now loading routes...');
 require('../routes')(app);

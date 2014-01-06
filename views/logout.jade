@@ -1,0 +1,12 @@
+extends layout
+
+block title
+  title Reporting › Odhlásit
+
+block content
+  h1 Odhlásit 
+  p Jste přihlášen jako 
+    strong= session.user
+  form(action='/logout', method='POST')
+    +csrf
+    +submit('Odhlásit')
